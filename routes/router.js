@@ -9,7 +9,7 @@ const technologyController = require("./../controller/technologyController");
 const Router = express.Router();
 
 Router.route("/").get(homeController.getHomeData);
-Router.route("/bollywood").get(bollywoodController.getHollywoodData);
+Router.route("/bollywood").get(bollywoodController.getBollywoodData);
 Router.route("/hollywood").get(hollywoodController.getHollywoodData);
 Router.route("/technology").get(technologyController.getTechnologyData);
 Router.route("/fitness").get(fitnessController.getFitnessData);

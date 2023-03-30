@@ -1,11 +1,13 @@
 const fs = require("fs");
+const {Food} = require("./../Model/model");
 
-const Food = JSON.parse(
-    fs.readFileSync(`${__dirname}/../JsonData/Food.json`,"utf-8")
-);
+// const Food = JSON.parse(
+//     fs.readFileSync(`${__dirname}/../JsonData/Food.json`,"utf-8")
+// );
 
-exports.getFoodData = (req,res)=>{
+exports.getFoodData = async(req,res)=>{
+    const food = await Food.find(); 
     res.status(200).json({
-        Food
+        Food : food
     });
 }

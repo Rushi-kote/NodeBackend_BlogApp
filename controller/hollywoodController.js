@@ -1,11 +1,12 @@
 const fs = require("fs");
+const {Hollywood} = require("./../Model/model");
 
-const Hollywood = JSON.parse(
-    fs.readFileSync(`${__dirname}/../JsonData/Hollywood.json`,"utf-8")
-);
 
-exports.getHollywoodData = (req,res)=>{
+
+exports.getHollywoodData = async(req,res)=>{
+    
+    const hjollywood = await Hollywood.find(); 
     res.status(200).json({
-        Hollywood
+        Hollywood : hollywood
     });
 }
